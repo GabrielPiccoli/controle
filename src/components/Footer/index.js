@@ -16,13 +16,13 @@ function Footer() {
       </p>
       <div className="icones">
         <a href="https://www.facebook.com/gabriel.piccoli.1">
-          <img className="icones-sociais" src={Facebook}></img>
+          <img className="icones-sociais" src={Facebook} alt="Logo Facebook"></img>
         </a>
         <a href="https://github.com/GabrielPiccoli">
-          <img className="icones-sociais" src={Github}></img>
+          <img className="icones-sociais" src={Github} alt="Logo Github"></img>
         </a>
         <a href="https://www.linkedin.com/in/gabriel-piccoli-144756103/">
-          <img className="icones-sociais" src={Linkedin}></img>
+          <img className="icones-sociais" src={Linkedin} alt="Logo Linkedin"></img>
         </a>
       </div>
     </FooterBase>

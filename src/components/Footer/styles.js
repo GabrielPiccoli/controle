@@ -5,7 +5,7 @@ export const FooterBase = styled.footer`
   justify-content: space-between;
   background: var(--black);
   opacity: 0.9;
-  border-top: 2px solid var(--primary);
+  border-top: 6px solid var(--primary);
   padding-left: 30px;
   padding-right: 30px;
   padding-top: 10px;
