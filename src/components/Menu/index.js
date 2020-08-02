@@ -16,7 +16,7 @@ function Menu() {
           Nova Categoria
         </Button>
 
-        <Button as={Link} className="ButtonLink" to="/">
+        <Button as={Link} className="ButtonLink" to="/cadastro/lancamento">
           Novo Lançamento
         </Button>
       </div>

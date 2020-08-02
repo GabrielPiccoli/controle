@@ -1,13 +1,13 @@
 import React from 'react';
-import Menu from '../../components/Menu';
-import Footer from '../../components/Footer';
+import PageDefault from '../../components/PageDefault';
 
 function Home() {
   return (
-    <div className="App">
-      <Menu />
-      <Footer />
-    </div>
+    <>
+      <PageDefault>
+        <h1>Home</h1>
+      </PageDefault>
+    </>
   );
 }
 

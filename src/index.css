@@ -9,7 +9,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 :root {
   --primary: #A60000;
   --black: #000000;
-  --blackLighter: #9E9E9E;
+  --blackLighter: #4e4e4e;
   --grayLight: #F5F5F5;
   --grayMedium: #e5e5e5; 
   --white: #FFFFFF;
@@ -24,3 +24,9 @@ body {
 a {
   color: inherit;
 } 
+
+#root {
+  min-height: calc(100vh - var(--bodyPaddingTop));
+  display: flex;
+  flex-direction: column;
+}
