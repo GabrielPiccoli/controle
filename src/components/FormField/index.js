@@ -5,7 +5,7 @@ import styled, { css } from 'styled-components';
 const FormFieldWrapper = styled.div`
   position: relative;
   input[type="color"] {
-    padding: 10px;
+    padding: 10 px;
     padding-left: 50px;
 
     &:focus {

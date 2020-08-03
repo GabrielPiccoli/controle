@@ -3,6 +3,7 @@ import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
 
+
 function CadastroCategoria() {
   const valoresIniciais = {
     nome: '',
