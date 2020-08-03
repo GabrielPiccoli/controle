@@ -1,9 +1,28 @@
 import React, { useState } from 'react';
 import PageDefault from '../../../components/PageDefault';
+import FormField from '../../../components/FormField';
+import Button from '../../../components/Button';
 
 function CadastroCategoria() {
-  const [categorias, setCategorias] = useState(['Teste']);
-  const [nomeDaCategoria, setNomeDaCategoria] = useState('Nome Categoria');
+  const valoresIniciais = {
+    nome: '',
+    cor: '',
+  };
+  
+  const [categorias, setCategorias] = useState([]);
+  const [values, setValues] = useState(valoresIniciais);
+  
+  function setValue(chave, valor) {
+    setValues({
+      ...values,
+      [chave]: valor
+    })
+  };
+
+  function handleChange(e) {
+    //const { getAttribute, value } = e.target;
+    setValue(e.target.getAttribute('name'), e.target.value);
+  };
 
   return (
     <PageDefault>
@@ -12,31 +31,42 @@ function CadastroCategoria() {
         e.preventDefault();
         setCategorias([
           ...categorias,
-          nomeDaCategoria
+          values
         ]);
+
+        setValues(valoresIniciais);
       }}>
-        <label>Nome da Categoria:</label>
-        <input 
+        <FormField
+          label="Nome da Categoria"
           type="text"
-          value={nomeDaCategoria}
-          onChange={ (e) => setNomeDaCategoria(e.target.value)}
+          value={values.nome}
+          name="nome"
+          onChange={handleChange}
         />
-        <button>
+
+        <FormField
+          label="Cor"
+          type="color"
+          value={values.cor}
+          name="cor"
+          onChange={handleChange}
+        />
+        <Button>
           Cadastrar
-        </button>
+        </Button>
       </form>
 
       <ul>
         {categorias.map((categoria) => {
           return (
             <li key={categoria}>
-              {categoria}
+              {categoria.nome}
             </li>
           )
         })}
       </ul>
     </PageDefault>
   )
-} 
+}
 
 export default CadastroCategoria;
