@@ -2,39 +2,22 @@ import React, { useState, useEffect } from 'react';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
-
+import useForm from '../../../hooks/useForm';
+import categoriasRepository from '../../../repositories/categorias'
 
 function CadastroCategoria() {
   const valoresIniciais = {
     nome: '',
     cor: '',
   };
-  
-  const [categorias, setCategorias] = useState([]);
-  const [values, setValues] = useState(valoresIniciais);
-  
-  function setValue(chave, valor) {
-    setValues({
-      ...values,
-      [chave]: valor
-    })
-  };
 
-  function handleChange(e) {
-    //const { getAttribute, value } = e.target;
-    setValue(e.target.getAttribute('name'), e.target.value);
-  };
+  const { handleChange, values, clearForm } = useForm(valoresIniciais);
+
+  const [categorias, setCategorias] = useState([]);  
 
   useEffect(() => {
-    const url = 'http://localhost:8080/categorias';
-    fetch(url)
-      .then(async (respostaServidor) => {
-        const resposta = await respostaServidor.json();
-        setCategorias([
-          ...resposta
-        ])
-      })
-  })
+    categoriasRepository.getAllWithRelease();
+  }, [])
 
   return (
     <PageDefault>
@@ -46,7 +29,7 @@ function CadastroCategoria() {
           values
         ]);
 
-        setValues(valoresIniciais);
+        clearForm()
       }}>
         <FormField
           label="Nome da Categoria"
@@ -71,7 +54,7 @@ function CadastroCategoria() {
       <ul>
         {categorias.map((categoria) => {
           return (
-            <li key={categoria}>
+            <li key={categoria} style={{color: categoria.cor }}>
               {categoria.nome}
             </li>
           )
