@@ -11,15 +11,9 @@ function Menu() {
         <img className="Logo" src={Logo} alt="controle de gastos" />
       </Link>
 
-      <div className="buttons">
-        <Button as={Link} className="ButtonLink" to="/cadastro/categoria">
-          Nova Categoria
-        </Button>
-
-        <Button as={Link} className="ButtonLink" to="/cadastro/lancamento">
-          Novo Lançamento
-        </Button>
-      </div>
+      <Button as={Link} className="ButtonLink" to="/cadastro/lancamento">
+        Novo Lançamento
+      </Button>
     </nav>
   );
 }

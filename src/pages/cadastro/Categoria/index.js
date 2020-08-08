@@ -24,10 +24,10 @@ function CadastroCategoria() {
       <h1>Cadastro de Categoria</h1>
       <form onSubmit={ function handleSubmit(e) {
         e.preventDefault();
-        setCategorias([
-          ...categorias,
-          values
-        ]);
+        categoriasRepository.create({
+          nome: values.nome,
+          cor: values.cor,
+        });
 
         clearForm()
       }}>

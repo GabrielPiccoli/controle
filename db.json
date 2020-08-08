@@ -1,35 +1,56 @@
 {
   "categorias": [
     {
-      "id" : 1,
+      "id": 1,
       "nome": "Supermercado",
       "cor": "#cbd1ff"
     },
-
     {
-      "id" : 2,
+      "id": 2,
       "nome": "Farmácia",
       "cor": "#ff0000"
     }
   ],
   "lancamentos": [
     {
-      "id":1,
+      "id": 1,
       "categoriaId": 1,
       "data": "01/08/2020",
-      "valor": 50.00
+      "valor": 50
     },
     {
-      "id":2,
+      "id": 2,
       "categoriaId": 2,
       "data": "02/08/2020",
-      "valor": 40.00
+      "valor": 40
     },
     {
-      "id":3,
+      "id": 3,
       "categoriaId": 1,
       "data": "31/07/2020",
-      "valor": 30.00
+      "valor": 30
+    },
+    {
+      "data": "2020-08-07",
+      "valor": "100",
+      "id": 4
+    },
+    {
+      "data": "2020-08-10",
+      "valor": "100",
+      "id": 5
+    },
+    {
+      "data": "2020-10-08",
+      "valor": "20",
+      "categoriaId": 1,
+      "id": 6
+    },
+    {
+      "data": "2020-02-10",
+      "valor": "31",
+      "categoriaId": 2,
+      "id": 7
     }
   ]
 }
